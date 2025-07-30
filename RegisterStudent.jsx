@@ -69,7 +69,7 @@ const RegisterStudent = () => {
     }
 
     try {
-      await axios.post("/api/send-otp", { mobile }); // Replace with real endpoint
+      await axios.post("http://127.0.0.1:8000/api/users/register/", { mobile }); //
       setOtpSent(true);
       alert("OTP sent to mobile!");
     } catch (error) {
@@ -165,6 +165,7 @@ const RegisterStudent = () => {
           {errors.mobile && (
             <p className="text-red-500 text-sm">{errors.mobile}</p>
           )}
+          {/*otp generation*/}
 
           {otpSent && !otpVerified && (
             <div className="flex gap-2 items-center">
